@@ -1,13 +1,28 @@
-/* Your Code Here */
+/* Your Code Here*/
+const createEmloyeeRecord = ([firstName, familyName,title,payPerHour]) =>{
+    let empObj = {
+        firstName,
+        familyName,
+        title,
+        payPerHour,
+        timeInEvents : [],
+        timeOutEvents :[] 
+  }
+  return empObj
+}
 
-/*
- We're giving you this function. Take a look at it, you might see some usage
- that's new and different. That's because we're avoiding a well-known, but
- sneaky bug that we'll cover in the next few lessons!
+function createEmloyeeRecord(records) {
+    return records.map(createEmloyeeRecord)
+}
 
- As a result, the lessons for this function will pass *and* it will be available
- for you to use if you need it!
- */
+function createTimeInEvent(timeStamp){
+    let[date, hour] = timeStamp.split(" ")
+    this.timeInEvents.push({
+        type: "TimeIn",
+        hour: parseInt(hour,10),
+        date,
+    })
+}
 
 const allWagesFor = function () {
     const eligibleDates = this.timeInEvents.map(function (e) {
